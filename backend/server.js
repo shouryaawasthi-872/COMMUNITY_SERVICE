@@ -25,13 +25,22 @@ if (!process.env.JWT_SECRET) {
     throw new Error("JWT_SECRET is missing");
 }
 
+const corsOrigins = (process.env.CORS_ORIGINS || "http://localhost:5173")
+    .split(",")
+    .map((origin) => origin.trim())
+    .filter(Boolean);
+
+if (corsOrigins.length === 0) {
+    throw new Error("CORS_ORIGINS must contain at least one origin");
+}
+
 const app = express();
 
 const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: "http://localhost:5173",
+        origin: corsOrigins,
         methods: ["GET", "POST"]
     }
 });
@@ -39,7 +48,7 @@ const io = new Server(server, {
 app.use(helmet());
 
 app.use(cors({
-    origin: "http://localhost:5173"
+    origin: corsOrigins
 }));
 
 app.use(express.json());
