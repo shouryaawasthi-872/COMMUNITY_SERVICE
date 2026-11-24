@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Uploaded and test audio
+uploads/
+sample.mp3
+streamed-audio.mp3
+
+# Build output
+dist/
+build/
+
+# Logs
+*.log
+
+# System and editor files
+.DS_Store
+Thumbs.db
+.vscode/

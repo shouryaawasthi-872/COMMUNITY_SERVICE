@@ -1,0 +1,17 @@
+{
+  "watch": [
+    "server.js",
+    "config",
+    "middleware",
+    "models",
+    "routes",
+    "sockets",
+    "utils"
+  ],
+  "ext": "js,json",
+  "ignore": [
+    "uploads/**",
+    "node_modules/**"
+  ],
+  "signal": "SIGINT"
+}

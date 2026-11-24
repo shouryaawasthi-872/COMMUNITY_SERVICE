@@ -1,0 +1,1035 @@
+
+:root {
+    --cream: #fff8e7;
+    --ink: #161616;
+    --coral: #ff795d;
+    --lavender: #c4b5fd;
+    --lime: #d4ed91;
+    --yellow: #ffd65a;
+    --border: 2px solid #161616;
+    --shadow: 5px 5px 0 #161616;
+}
+
+/* SHARED STYLES */
+
+.coral {
+    background: var(--coral);
+}
+
+.lime {
+    background: var(--lime);
+}
+
+.yellow {
+    background: var(--yellow);
+}
+
+.lavender {
+    background: var(--lavender);
+}
+
+.neo-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 20px;
+    border: var(--border);
+    box-shadow: 4px 4px 0 var(--ink);
+    color: var(--ink);
+    font-weight: 800;
+    transition: 0.15s ease;
+}
+
+.neo-button:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--ink);
+}
+
+.neo-button:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+
+.neo-icon-button {
+    display: grid;
+    place-items: center;
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+    background: white;
+    color: var(--ink);
+    border: var(--border);
+    box-shadow: 3px 3px 0 var(--ink);
+}
+
+.neo-icon-button:hover {
+    background: var(--yellow);
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* NAVIGATION */
+
+.neo-workspace {
+    min-height: 100vh;
+    padding-bottom: 110px;
+}
+
+.neo-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 22px 5%;
+    border-bottom: var(--border);
+    background: var(--cream);
+}
+
+.neo-logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -2.5px;
+}
+
+.neo-logo span {
+    color: var(--coral);
+    margin-left: -8px;
+}
+
+.neo-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.neo-links .neo-button {
+    padding: 10px 14px;
+}
+
+.neo-links a:hover {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+.neo-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 700;
+}
+
+/* HERO SECTION */
+
+.neo-main {
+    max-width: 1500px;
+    margin: auto;
+    padding: 0 5%;
+}
+
+.neo-status {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 20px 0;
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.neo-hero {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    gap: 20px;
+}
+
+.neo-hero-text {
+    background: var(--lavender);
+    border: var(--border);
+    box-shadow: var(--shadow);
+    padding: 45px 35px;
+    position: relative;
+}
+
+.neo-sticker {
+    display: inline-block;
+    padding: 8px 12px;
+    background: var(--yellow);
+    border: var(--border);
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: bold;
+    transform: rotate(-3deg);
+}
+
+.neo-hero h1 {
+    font-size: clamp(42px, 5.7vw, 95px);
+    font-weight: 900;
+    letter-spacing: -0.075em;
+    line-height: 0.98;
+    margin: 30px 0 20px;
+}
+
+.neo-hero h1 span {
+    color: var(--coral);
+    -webkit-text-stroke: 1px var(--ink);
+}
+
+.neo-hero-text p {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.neo-hero-art {
+    background: var(--coral);
+    border: var(--border);
+    box-shadow: var(--shadow);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.neo-art-label {
+    align-self: flex-start;
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.neo-vinyl {
+    width: min(250px, 85%);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 3px solid var(--ink);
+    background: repeating-radial-gradient(
+        circle,
+        #161616 0px,
+        #161616 5px,
+        #414141 6px,
+        #161616 7px
+    );
+    display: grid;
+    place-items: center;
+    margin: 30px 0;
+    animation: rotate-record 18s linear infinite;
+}
+
+.vinyl-label {
+    width: 35%;
+    aspect-ratio: 1;
+    background: var(--yellow);
+    border: var(--border);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+.neo-art-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
+}
+
+@keyframes rotate-record {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* SPATIAL LAB AND REGISTRY BANNERS */
+
+.neo-lab-banner,
+.neo-registry-banner,
+.neo-live-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 30px;
+    margin-top: 25px;
+    border: var(--border);
+    box-shadow: var(--shadow);
+}
+
+.neo-lab-banner {
+    background: var(--lime);
+}
+
+.neo-registry-banner {
+    background: var(--coral);
+}
+
+.neo-live-banner {
+    background: var(--lavender);
+}
+
+.neo-lab-banner span,
+.neo-registry-banner span,
+.neo-live-banner span {
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.neo-lab-banner h2,
+.neo-registry-banner h2,
+.neo-live-banner h2 {
+    font-size: clamp(25px, 4vw, 40px);
+    letter-spacing: -2px;
+    font-weight: 900;
+    margin: 10px 0;
+}
+
+.neo-lab-banner p,
+.neo-registry-banner p,
+.neo-live-banner p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* STATISTICS */
+
+.neo-metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.3fr;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.neo-stat {
+    border: var(--border);
+    box-shadow: var(--shadow);
+    padding: 22px;
+    position: relative;
+}
+
+.neo-stat svg {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.neo-stat strong {
+    display: block;
+    font-size: clamp(28px, 3.8vw, 50px);
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin: 12px 30px 8px 0;
+}
+
+.neo-stat span {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* COLLECTION */
+
+.neo-collection {
+    margin-top: 65px;
+    scroll-margin-top: 20px;
+}
+
+.neo-section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.neo-small-label {
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.neo-section-heading h2 {
+    font-size: clamp(35px, 5vw, 65px);
+    letter-spacing: -0.065em;
+    font-weight: 900;
+    margin-top: 8px;
+}
+
+.neo-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.neo-search {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: var(--border);
+    background: white;
+    padding: 12px 16px;
+}
+
+.neo-search input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    outline: none;
+    min-width: 0;
+}
+
+.neo-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 22px 0 28px;
+}
+
+.neo-filters button {
+    padding: 9px 16px;
+    border: var(--border);
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.neo-filters button.active {
+    background: var(--ink);
+    color: var(--cream);
+    box-shadow: 3px 3px 0 var(--coral);
+}
+
+.neo-filters button:hover:not(.active) {
+    background: var(--yellow);
+}
+
+.neo-assets {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fill,
+        minmax(240px, 1fr)
+    );
+    gap: 25px;
+}
+
+.neo-asset-card {
+    background: white;
+    border: var(--border);
+    box-shadow: var(--shadow);
+    min-width: 0;
+    transition: 0.2s ease;
+}
+
+.neo-asset-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 5px 9px 0 var(--ink);
+}
+
+.neo-cover {
+    height: 210px;
+    border-bottom: var(--border);
+    position: relative;
+    overflow: hidden;
+}
+
+.neo-cover-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    gap: 10px;
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.neo-record-art {
+    position: absolute;
+    inset: 35px 0 0;
+    display: grid;
+    place-items: center;
+    transform: rotate(-15deg);
+}
+
+.neo-play-button {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    width: 53px;
+    height: 53px;
+    display: grid;
+    place-items: center;
+    background: var(--yellow);
+    color: var(--ink);
+    border: var(--border);
+    box-shadow: 3px 3px 0 var(--ink);
+    border-radius: 50%;
+}
+
+.neo-play-button:hover {
+    background: white;
+}
+
+.neo-asset-info {
+    padding: 20px;
+}
+
+.neo-asset-info h3 {
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    overflow-wrap: anywhere;
+}
+
+.neo-asset-info p {
+    font-size: 13px;
+    color: #555;
+    margin-top: 6px;
+}
+
+.neo-asset-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-family: monospace;
+    font-size: 12px;
+    padding: 15px 0;
+    margin-top: 12px;
+    border-top: 1px dashed var(--ink);
+}
+
+.neo-card-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.neo-verify {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px;
+    border: var(--border);
+    background: var(--cream);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.neo-verify:hover,
+.neo-verify.is-verified {
+    background: var(--lime);
+}
+
+.neo-details {
+    display: grid;
+    place-items: center;
+    padding: 10px;
+    background: var(--lavender);
+    border: var(--border);
+}
+
+.neo-empty {
+    border: 2px dashed var(--ink);
+    padding: 60px 20px;
+    text-align: center;
+    background: white;
+}
+
+.neo-empty h3 {
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+.neo-message {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 15px;
+    border: var(--border);
+    background: var(--yellow);
+    box-shadow: 3px 3px 0 var(--ink);
+    margin-top: 25px;
+    font-weight: bold;
+}
+
+.neo-message button {
+    border: none;
+    background: transparent;
+}
+
+/* FOOTER AND AUDIO PLAYER */
+
+.neo-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 25px 0;
+    margin-top: 60px;
+    border-top: var(--border);
+    font-family: monospace;
+    font-size: 11px;
+}
+
+.neo-footer strong {
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    letter-spacing: -2px;
+}
+
+.neo-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 30;
+    background: var(--yellow);
+    border-top: 3px solid var(--ink);
+    padding: 16px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.neo-now-playing {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.neo-now-playing svg {
+    flex-shrink: 0;
+}
+
+.neo-now-playing small {
+    display: block;
+    font-family: monospace;
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+
+.neo-now-playing strong {
+    display: block;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+.neo-player audio {
+    width: min(45%, 500px);
+    height: 45px;
+}
+
+.neo-player-idle {
+    font-family: monospace;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.neo-player-brand {
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.spinning {
+    animation: rotate-record 5s linear infinite;
+}
+
+/* UPLOAD AND ASSET MODALS */
+
+.neo-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(22, 22, 22, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 100;
+}
+
+.neo-modal {
+    width: min(520px, 100%);
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--cream);
+    border: 3px solid var(--ink);
+    box-shadow: 9px 9px 0 var(--ink);
+}
+
+.neo-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 22px;
+    border-bottom: var(--border);
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.neo-modal-body {
+    padding: 28px;
+}
+
+.neo-modal-body h2 {
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 10px;
+    overflow-wrap: anywhere;
+}
+
+.neo-modal-body > p {
+    margin-bottom: 25px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.neo-modal form label {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.neo-modal input,
+.neo-modal textarea,
+.neo-modal select {
+    display: block;
+    width: 100%;
+    background: white;
+    border: var(--border);
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 0;
+}
+
+.neo-modal textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.neo-modal .neo-file-drop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    background: var(--lavender);
+    padding: 22px;
+    border: 2px dashed var(--ink);
+    text-align: center;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+.neo-file-drop small {
+    font-family: monospace;
+    font-size: 10px;
+}
+
+.neo-file-drop input {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    font-size: 12px;
+}
+
+.neo-passport {
+    border: var(--border);
+    background: white;
+    padding: 18px;
+    margin: 20px 0;
+}
+
+.neo-passport label {
+    display: block;
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: bold;
+    margin: 15px 0 7px;
+}
+
+.neo-passport label:first-child {
+    margin-top: 0;
+}
+
+.neo-passport p {
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.neo-passport code {
+    display: block;
+    background: var(--lime);
+    border: 1px solid var(--ink);
+    padding: 10px;
+    font-size: 11px;
+    overflow-wrap: anywhere;
+}
+
+/* LOGIN AND REGISTRATION */
+
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 20px;
+    background-color: var(--lavender);
+    background-image: radial-gradient(
+        var(--ink) 0.7px,
+        transparent 0.7px
+    );
+    background-size: 24px 24px;
+}
+
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+    padding: 35px;
+    background: var(--cream);
+    border: 3px solid var(--ink);
+    box-shadow: 10px 10px 0 var(--ink);
+}
+
+.brand-icon {
+    width: 72px;
+    height: 72px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 20px;
+    background: var(--coral);
+    border: var(--border);
+    box-shadow: 4px 4px 0 var(--ink);
+    transform: rotate(-6deg);
+}
+
+.auth-card h1 {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.auth-card .subtitle {
+    text-align: center;
+    color: #555;
+    font-size: 14px;
+    margin: 12px 0 30px;
+}
+
+.auth-card h2 {
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    margin-bottom: 24px;
+}
+
+.auth-card label {
+    display: block;
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    background: white;
+    border: var(--border);
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    min-width: 0;
+    border: none;
+    background: transparent;
+    outline: none;
+    color: var(--ink);
+}
+
+.input-group:focus-within {
+    box-shadow: 3px 3px 0 var(--lavender);
+}
+
+.primary-button {
+    width: 100%;
+    padding: 14px;
+    background: var(--yellow);
+    color: var(--ink);
+    border: var(--border);
+    box-shadow: 4px 4px 0 var(--ink);
+    font-weight: 900;
+    transition: 0.15s;
+}
+
+.primary-button:hover {
+    background: var(--lime);
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 var(--ink);
+}
+
+.auth-footer {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 28px;
+    line-height: 1.6;
+}
+
+.auth-footer a {
+    font-weight: 900;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.error-message {
+    background: var(--coral);
+    border: var(--border);
+    padding: 12px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 850px) {
+    .neo-links {
+        display: none;
+    }
+
+    .neo-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .neo-hero-art {
+        min-height: 300px;
+    }
+
+    .neo-metrics {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .neo-stat:last-child {
+        grid-column: span 2;
+    }
+
+    .neo-player {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .neo-player audio {
+        width: 100%;
+    }
+
+    .neo-player-brand {
+        display: none;
+    }
+
+    .neo-workspace {
+        padding-bottom: 170px;
+    }
+}
+
+@media (max-width: 500px) {
+    .neo-logo {
+        font-size: 26px;
+    }
+
+    .neo-profile span {
+        display: none;
+    }
+
+    .neo-status {
+        font-size: 9px;
+    }
+
+    .neo-hero-text {
+        padding: 30px 20px;
+    }
+
+    .neo-hero h1 {
+        font-size: 42px;
+    }
+
+    .neo-metrics {
+        gap: 12px;
+    }
+
+    .neo-stat {
+        padding: 15px;
+    }
+
+    .neo-stat strong {
+        font-size: 30px;
+    }
+
+    .neo-section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .neo-modal-body {
+        padding: 20px;
+    }
+
+    .neo-modal-body h2 {
+        font-size: 32px;
+    }
+
+    .neo-player-idle {
+        display: none;
+    }
+
+    .neo-lab-banner,
+    .neo-registry-banner,
+    .neo-live-banner {
+        padding: 22px;
+    }
+
+    .neo-assets {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
