@@ -221,7 +221,7 @@ function LiveRooms() {
 
         const socket = io(
             import.meta.env.VITE_SOCKET_URL ||
-                "http://localhost:5000",
+                "https://community-service-y52h.onrender.com",
             {
                 auth: {
                     token: localStorage.getItem("token")
